@@ -3,13 +3,21 @@ package com.abdur.contacts.data
 import kotlinx.coroutines.flow.Flow
 
 
-interface ContactRepository {
+class ContactRepository(private val dao : ContactDao) {
 
-    suspend fun insertContact(contact: Contact)
+    suspend fun insertContact(contact: Contact){
+        dao.insertContact(contact)
+    }
 
-    suspend fun deleteContact(contact: Contact)
+    suspend fun deleteContact(contact: Contact){
+        dao.deleteContact(contact)
+    }
 
-    suspend fun updateContact(contact: Contact)
+    suspend fun updateContact(contact: Contact){
+        dao.updateContact(contact)
+    }
 
-    fun getAllContacts() : Flow<List<Contact>>
+    fun getAllContacts() : Flow<List<Contact>>{
+        return dao.getAllContacts()
+    }
 }
