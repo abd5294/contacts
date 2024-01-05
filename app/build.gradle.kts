@@ -71,8 +71,9 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     //Dagger hilt dependencies
-    implementation ("com.google.dagger:hilt-android:2.48")
-    kapt ("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
 
     //Room Database dependencies
     implementation("androidx.room:room-runtime:2.6.1")
@@ -80,6 +81,9 @@ dependencies {
     implementation("androidx.room:room-ktx:2.6.1")
 
     //compose dependency
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
-    implementation ("androidx.navigation:navigation-compose:2.7.5")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("androidx.navigation:navigation-compose:2.7.6")
+
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+
 }

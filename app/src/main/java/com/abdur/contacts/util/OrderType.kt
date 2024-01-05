@@ -1,4 +1,4 @@
-package com.abdur.contacts.ui.contact_screen
+package com.abdur.contacts.util
 
 enum class OrderType {
     NAME,

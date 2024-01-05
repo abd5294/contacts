@@ -1,6 +1,8 @@
 package com.abdur.contacts.data
 
+import androidx.lifecycle.LiveData
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.SharedFlow
 
 
 class ContactRepository(private val dao : ContactDao) {
@@ -13,11 +15,16 @@ class ContactRepository(private val dao : ContactDao) {
         dao.deleteContact(contact)
     }
 
-    suspend fun updateContact(contact: Contact){
-        dao.updateContact(contact)
-    }
 
     fun getAllContacts() : Flow<List<Contact>>{
         return dao.getAllContacts()
+    }
+
+    suspend fun getContactById(id : Int) : Contact{
+        return dao.getContactById(id)
+    }
+
+    suspend fun getContactByFirstName(firstName : String) : Contact?{
+        return dao.getContactByFirstName(firstName)
     }
 }

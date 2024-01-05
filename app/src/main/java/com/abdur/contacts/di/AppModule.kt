@@ -23,7 +23,7 @@ object AppModule {
         return Room.databaseBuilder(
             context,
             ContactDatabase::class.java,
-            ""
+            "contacts_db"
         ).build()
     }
 
